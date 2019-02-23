@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+
+<hibernate-configuration>
+    <session-factory>
+
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="connection.url">jdbc:postgresql://127.0.0.1:5432/News</property>
+        <property name="connection.username">postgres</property>
+        <property name="connection.password">12345</property>
+
+        <!-- Print executed SQL to stdout -->
+        <property name="show_sql">true</property>
+
+        <!-- Drop and re-create all database on startup -->
+        <property name="hibernate.hbm2ddl.auto">create-drop</property>
+
+        <!-- Enable Hibernate's automatic session context management -->
+        <property name="current_session_context_class">thread</property>
+
+         <!--Annotated entity classes-->
+        <mapping class="ir.amirmohammadnoori.model.News"/>
+
+    </session-factory>
+</hibernate-configuration>
